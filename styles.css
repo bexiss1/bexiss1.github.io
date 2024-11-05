@@ -1,0 +1,165 @@
+/* Alterando o fundo do body para a cor sólida */
+body {
+    background-color: #2f5796; /* Cor de fundo solicitada */
+    font-family: 'Bebas Neue', sans-serif; /* Fonte padrão */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.welcome-line {
+    background-color: rgba(255, 255, 255, 0.2); /* Retângulo com pouca opacidade */
+    text-align: center;
+    padding: 10px 0; /* Aumentado */
+}
+
+.welcome-text {
+    font-family: 'Pixelify Sans', sans-serif; /* Fonte Pixelify Sans */
+    font-size: 28px; /* Aumentado */
+    font-weight: bold; /* Em negrito */
+    color: white; /* Cor branca */
+    margin: 0;
+    animation: blink 1s step-start infinite; /* Efeito de piscar */
+}
+
+@keyframes blink {
+    0%, 100% { color: #0056B3; }
+    50% { color: white; }
+}
+
+.header-background {
+    position: relative; /* Para posicionar o texto ao redor da imagem */
+    background-color: #2f5796; /* Cor de fundo solicitada */
+    text-align: center;
+}
+
+.header-image {
+    width: 250px; /* Aumentado */
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid white;
+    display: block;
+    margin: 0 auto; /* Centralizado */
+}
+
+.nome {
+    font-weight: bold; /* Em negrito */
+    font-size: 28px; /* Aumentar o tamanho */
+    text-align: center; /* Centralizar o texto */
+    margin-top: 10px; /* Aumentar espaço entre a imagem e o nome */
+    color: white; /* Cor do texto */
+}
+
+header {
+    text-align: center;
+    padding: 10px; /* Diminuído para não invadir a foto */
+}
+
+nav {
+    position: absolute;
+    left: 20px; /* Menu no canto esquerdo */
+    top: 20px; /* Ajuste a posição do menu */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; /* Menu horizontal */
+    margin-right: 20px; /* Aumentado para melhor espaçamento */
+}
+
+nav a {
+    color: white; /* Cor dos links do menu */
+    text-decoration: none;
+    font-size: 20px; /* Aumentar tamanho da fonte dos links */
+}
+
+section {
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    max-width: 800px;
+}
+
+h2 {
+    color: #0056b3; /* Cor do título */
+    font-size: 24px; /* Aumentar o tamanho da fonte dos títulos */
+}
+
+.section-text {
+    font-size: 20px; /* Aumentado para se igualar ao título */
+}
+
+.contact-title {
+    display: inline; /* Contato rente aos botões */
+    margin-right: 20px; /* Espaçamento */
+}
+
+.contact-buttons {
+    display: flex; /* Para alinhar os botões lado a lado */
+    justify-content: flex-start; /* Justificado à esquerda */
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+.contact-buttons a {
+    display: flex; /* Para incluir a imagem e o texto */
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px; /* Arredondar os cantos */
+    text-decoration: none;
+    color: white; /* Cor do texto */
+}
+
+.whatsapp-link {
+    background: linear-gradient(to right, #25D366, #1EBEA5); /* Gradiente do WhatsApp */
+}
+
+.instagram-link {
+    background: linear-gradient(to right, #E1306C, #F56040); /* Gradiente do Instagram */
+}
+
+.contact-buttons img {
+    width: 20px; /* Tamanho das imagens */
+    height: 20px;
+    margin-right: 5px; /* Espaço entre imagem e texto */
+}
+
+.pimbx-button {
+    display: block; /* Para estilizar o botão */
+    width: 200px; /* Aumentado */
+    height: 150px; /* Aumentado */
+    background: white; /* Fundo branco */
+    border-radius: 5px; /* Arredondar os cantos */
+    text-align: center; /* Centralizar o conteúdo */
+    text-decoration: none; /* Sem sublinhado */
+    margin: 20px auto; /* Centralizado na seção */
+}
+
+.pimbx-button img {
+    width: 80%; /* Preencher o botão */
+    height: auto; /* Manter proporção */
+}
+
+footer {
+    text-align: center;
+}
+
+.descubra-link {
+    color: white; /* Cor do link "DESCUBRA" */
+    text-decoration: none; /* Sem sublinhado */
+    font-family: 'Pixelify Sans', sans-serif; /* Fonte do link DESCUBRA */
+    animation: blinkFooter 1s step-start infinite; /* Efeito de piscar */
+}
+
+@keyframes blinkFooter {
+    0%, 100% { color: #0056B3; }
+    50% { color: #1ED760; }
+}
+
+.email {
+    color: white; /* Cor do email */
+}
