@@ -1,20 +1,21 @@
-/* Alterando o fundo do body para a cor sólida */
 body {
-    background-color: #2f5796; /* Cor de fundo solicitada */
-    font-family: 'Bebas Neue', sans-serif; /* Fonte padrão */
+    background-color: #2f5796;
+    font-family: 'Bebas Neue', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: 1fr; /* Uma coluna para telas pequenas */
-    grid-template-rows: auto 1fr auto; /* Auto para o cabeçalho e rodapé, e o restante para o conteúdo */
-    grid-template-areas: "header" "main" "footer"; /* Usando grid para organizar */
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
 }
 
-/* Modificação para garantir a responsividade em telas grandes */
 @media (min-width: 768px) {
     body {
-        grid-template-columns: repeat(12, 1fr); /* 12 colunas no grid para telas maiores */
+        grid-template-columns: repeat(12, 1fr);
         grid-template-areas: 
             "header header header header header header header header header header header header header"
             "main main main main main main main main main main main main main"
@@ -22,13 +23,19 @@ body {
     }
 
     header {
-        grid-column: 1 / -1; /* Ocupa toda a largura */
+        grid-column: 1 / -1;
         text-align: left;
-        padding: 20px 40px; /* Aumenta o espaçamento */
+        padding: 20px 40px;
     }
 
-    .welcome-line {
-        padding: 20px 0;
+    nav ul {
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 0;
+    }
+
+    nav ul li {
+        margin-right: 30px;
     }
 
     .header-background {
@@ -47,15 +54,6 @@ body {
     .nome {
         font-size: 36px;
         color: white;
-    }
-
-    nav ul {
-        display: flex;
-        justify-content: flex-start;
-    }
-
-    nav ul li {
-        margin-right: 30px;
     }
 
     section {
@@ -83,7 +81,6 @@ body {
     }
 }
 
-/* Responsividade para telas menores (celulares e tablets) */
 @media (max-width: 768px) {
     body {
         grid-template-columns: 1fr;
@@ -96,11 +93,6 @@ body {
     header {
         padding: 10px;
         text-align: center;
-    }
-
-    nav {
-        position: static;
-        margin-top: 20px;
     }
 
     nav ul {
