@@ -1,74 +1,130 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Felipe Domiciano</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="img/cruzeiro.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="welcome-line">
-        <p class="welcome-text">BOAS VINDAS AO MEU MUNDO</p>
-    </div>
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#biografia">Biografia</a></li>
-                <li><a href="#hobbies">Hobbies</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+body {
+    font-family: 'Pixelify Sans', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
 
-    <div class="header-background">
-        <img src="img/perfilfoto.png" alt="Imagem do Felipe Domiciano" class="header-image">
-        <h1 class="nome">FELIPE DOMICIANO</h1>
-    </div>
+/* Organizando a navegação */
+header nav ul {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px 0;
+}
 
-    <main>
-        <section id="biografia">
-            <h2>Biografia</h2>
-            <p class="section-text">Nascido e criado em Barroso-MG, sempre fui um entusiasta de tecnologia, na minha família local, fui o primeiro a ter contato com tecnologia, tendo várias experiências com redes sociais, edição de vídeo, edição de imagem, e tudo isso eu fazia e faço até hoje com meu CELULAR.</p>
-        </section>
+header nav ul li {
+    list-style: none;
+    margin: 0 15px;
+}
 
-        <section id="hobbies">
-            <h2>Hobbies</h2>
-            <ul>
-                <li class="section-text">Jogar Futebol e Jogos no Geral</li>
-                <li class="section-text">Cantar e Ouvir Músicas (de 90% dos gêneros).</li>
-                <li class="section-text">Aprender sobre o mundo digital.</li>
-            </ul>
-        </section>
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
 
-        <section id="projetos">
-            <h2>Projetos</h2>
-            <a href="https://www.instagram.com/pimbx_/" class="pimbx-button">
-                <img src="img/pimbx_logo.png" alt="PIMBX Logo">
-            </a>
-        </section>
+header nav ul li a:hover {
+    color: #ff6347;
+}
 
-        <section id="contato">
-            <h2 class="contact-title">Contato</h2>
-            <div class="contact-buttons">
-                <a href="https://api.whatsapp.com/send/?phone=5532999284819&text&type=phone_number&app_absent=0" class="whatsapp-link">
-                    <img src="img/whatsapp.png" alt="WhatsApp">
-                    ME CHAME NO WHATSAPP
-                </a>
-                <a href="https://www.instagram.com/bxdotrap/" class="instagram-link">
-                    <img src="img/instagram.png" alt="Instagram">
-                    ME SIGA NO INSTAGRAM
-                </a>
-            </div>
-        </section>
-    </main>
+/* Header com imagem e nome */
+.header-background {
+    position: relative;
+    text-align: center;
+}
 
-    <footer>
-        <p><a href="https://open.spotify.com/intl-pt/artist/6kaM6WLOjBZRfQn6gfwvbp?si=SeMtRwxpQguQKhWDp2TfRA" class="descubra-link">DESCUBRA</a> | E-mail: <span class="email">fjose8887@gmail.com</span></p>
-    </footer>
-</body>
-</html>
+.header-image {
+    width: 100%;
+    height: auto;
+}
+
+.nome {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+/* Organizando o grid */
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.section-text {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+/* Estilo de botão no WhatsApp e Instagram */
+.contact-buttons a {
+    display: inline-flex;
+    align-items: center;
+    background-color: #25d366;
+    color: white;
+    padding: 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 5px;
+    font-size: 1.1rem;
+}
+
+.contact-buttons a img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.instagram-link {
+    background-color: #e4405f;
+}
+
+.pimbx-button img {
+    max-width: 100%;
+    height: auto;
+}
+
+.pimbx-button {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
