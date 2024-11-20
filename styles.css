@@ -5,161 +5,157 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    display: grid;
+    grid-template-columns: 1fr; /* Uma coluna para telas pequenas */
+    grid-template-rows: auto 1fr auto; /* Auto para o cabeçalho e rodapé, e o restante para o conteúdo */
+    grid-template-areas: "header" "main" "footer"; /* Usando grid para organizar */
 }
 
-.welcome-line {
-    background-color: rgba(255, 255, 255, 0.2); /* Retângulo com pouca opacidade */
-    text-align: center;
-    padding: 10px 0; /* Aumentado */
+/* Modificação para garantir a responsividade em telas grandes */
+@media (min-width: 768px) {
+    body {
+        grid-template-columns: repeat(12, 1fr); /* 12 colunas no grid para telas maiores */
+        grid-template-areas: 
+            "header header header header header header header header header header header header header"
+            "main main main main main main main main main main main main main"
+            "footer footer footer footer footer footer footer footer footer footer footer footer footer";
+    }
+
+    header {
+        grid-column: 1 / -1; /* Ocupa toda a largura */
+        text-align: left;
+        padding: 20px 40px; /* Aumenta o espaçamento */
+    }
+
+    .welcome-line {
+        padding: 20px 0;
+    }
+
+    .header-background {
+        display: grid;
+        justify-items: center;
+        padding: 40px 20px;
+    }
+
+    .header-image {
+        width: 250px;
+        height: auto;
+        border-radius: 50%;
+        border: 3px solid white;
+    }
+
+    .nome {
+        font-size: 36px;
+        color: white;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    nav ul li {
+        margin-right: 30px;
+    }
+
+    section {
+        max-width: 1000px;
+        margin: 20px auto;
+        padding: 30px;
+    }
+
+    footer {
+        padding: 20px 40px;
+    }
+
+    .contact-buttons {
+        display: flex;
+        gap: 20px;
+    }
+
+    .pimbx-button {
+        width: 300px;
+        height: 200px;
+    }
+
+    .pimbx-button img {
+        width: 80%;
+    }
 }
 
-.welcome-text {
-    font-family: 'Pixelify Sans', sans-serif; /* Fonte Pixelify Sans */
-    font-size: 28px; /* Aumentado */
-    font-weight: bold; /* Em negrito */
-    color: white; /* Cor branca */
-    margin: 0;
-    animation: blink 1s step-start infinite; /* Efeito de piscar */
-}
+/* Responsividade para telas menores (celulares e tablets) */
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "main"
+            "footer";
+    }
 
-@keyframes blink {
-    0%, 100% { color: #0056B3; }
-    50% { color: white; }
-}
+    header {
+        padding: 10px;
+        text-align: center;
+    }
 
-.header-background {
-    position: relative; /* Para posicionar o texto ao redor da imagem */
-    background-color: #2f5796; /* Cor de fundo solicitada */
-    text-align: center;
-}
+    nav {
+        position: static;
+        margin-top: 20px;
+    }
 
-.header-image {
-    width: 250px; /* Aumentado */
-    height: auto;
-    border-radius: 50%;
-    border: 3px solid white;
-    display: block;
-    margin: 0 auto; /* Centralizado */
-}
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
 
-.nome {
-    font-weight: bold; /* Em negrito */
-    font-size: 28px; /* Aumentar o tamanho */
-    text-align: center; /* Centralizar o texto */
-    margin-top: 10px; /* Aumentar espaço entre a imagem e o nome */
-    color: white; /* Cor do texto */
-}
+    nav ul li {
+        margin-bottom: 15px;
+    }
 
-header {
-    text-align: center;
-    padding: 10px; /* Diminuído para não invadir a foto */
-}
+    .header-background {
+        display: block;
+        padding: 20px;
+    }
 
-nav {
-    position: absolute;
-    left: 20px; /* Menu no canto esquerdo */
-    top: 20px; /* Ajuste a posição do menu */
-}
+    .header-image {
+        width: 150px;
+        height: auto;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
+    .nome {
+        font-size: 24px;
+        color: white;
+    }
 
-nav ul li {
-    display: inline; /* Menu horizontal */
-    margin-right: 20px; /* Aumentado para melhor espaçamento */
-}
+    section {
+        margin: 20px;
+        padding: 20px;
+    }
 
-nav a {
-    color: white; /* Cor dos links do menu */
-    text-decoration: none;
-    font-size: 20px; /* Aumentar tamanho da fonte dos links */
-}
+    footer {
+        padding: 20px;
+    }
 
-section {
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 5px;
-    max-width: 800px;
-}
+    .contact-buttons {
+        display: block;
+        text-align: center;
+    }
 
-h2 {
-    color: #0056b3; /* Cor do título */
-    font-size: 24px; /* Aumentar o tamanho da fonte dos títulos */
-}
+    .contact-buttons a {
+        display: block;
+        margin-bottom: 10px;
+    }
 
-.section-text {
-    font-size: 20px; /* Aumentado para se igualar ao título */
-}
+    .pimbx-button {
+        width: 150px;
+        height: 100px;
+    }
 
-.contact-title {
-    display: inline; /* Contato rente aos botões */
-    margin-right: 20px; /* Espaçamento */
-}
-
-.contact-buttons {
-    display: flex; /* Para alinhar os botões lado a lado */
-    justify-content: flex-start; /* Justificado à esquerda */
-    gap: 10px; /* Espaçamento entre os botões */
-}
-
-.contact-buttons a {
-    display: flex; /* Para incluir a imagem e o texto */
-    align-items: center;
-    padding: 10px;
-    border-radius: 5px; /* Arredondar os cantos */
-    text-decoration: none;
-    color: white; /* Cor do texto */
-}
-
-.whatsapp-link {
-    background: linear-gradient(to right, #25D366, #1EBEA5); /* Gradiente do WhatsApp */
-}
-
-.instagram-link {
-    background: linear-gradient(to right, #E1306C, #F56040); /* Gradiente do Instagram */
-}
-
-.contact-buttons img {
-    width: 20px; /* Tamanho das imagens */
-    height: 20px;
-    margin-right: 5px; /* Espaço entre imagem e texto */
-}
-
-.pimbx-button {
-    display: block; /* Para estilizar o botão */
-    width: 200px; /* Aumentado */
-    height: 150px; /* Aumentado */
-    background: white; /* Fundo branco */
-    border-radius: 5px; /* Arredondar os cantos */
-    text-align: center; /* Centralizar o conteúdo */
-    text-decoration: none; /* Sem sublinhado */
-    margin: 20px auto; /* Centralizado na seção */
-}
-
-.pimbx-button img {
-    width: 80%; /* Preencher o botão */
-    height: auto; /* Manter proporção */
-}
-
-footer {
-    text-align: center;
-}
-
-.descubra-link {
-    color: white; /* Cor do link "DESCUBRA" */
-    text-decoration: none; /* Sem sublinhado */
-    font-family: 'Pixelify Sans', sans-serif; /* Fonte do link DESCUBRA */
-    animation: blinkFooter 1s step-start infinite; /* Efeito de piscar */
-}
-
-@keyframes blinkFooter {
-    0%, 100% { color: #0056B3; }
-    50% { color: #1ED760; }
-}
-
-.email {
-    color: white; /* Cor do email */
+    .pimbx-button img {
+        width: 70%;
+    }
 }
