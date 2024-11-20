@@ -1,160 +1,165 @@
-/* Reset de estilos básicos e definição de corpo */
+/* Alterando o fundo do body para a cor sólida */
 body {
-    background-color: #2f5796;
-    font-family: 'Bebas Neue', sans-serif;
+    background-color: #2f5796; /* Cor de fundo solicitada */
+    font-family: 'Bebas Neue', sans-serif; /* Fonte padrão */
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    display: grid;
-    grid-template-columns: 1fr;  /* Em telas pequenas, uma coluna */
-    grid-template-rows: auto 1fr auto;  /* Cabeçalho, conteúdo e rodapé */
-    grid-template-areas: 
-        "header"
-        "main"
-        "footer";
 }
 
-/* Estilos para telas maiores (a partir de 768px) */
-@media (min-width: 768px) {
-    body {
-        grid-template-columns: repeat(12, 1fr);  /* 12 colunas */
-        grid-template-areas: 
-            "header header header header header header header header header header header header header"
-            "main main main main main main main main main main main main main"
-            "footer footer footer footer footer footer footer footer footer footer footer footer footer";
-    }
-
-    header {
-        grid-column: 1 / -1; /* Ocupa toda a largura */
-        text-align: left;
-        padding: 20px 40px;
-    }
-
-    nav ul {
-        display: flex;
-        justify-content: flex-start;
-        padding-left: 0;
-    }
-
-    nav ul li {
-        margin-right: 30px;
-    }
-
-    .header-background {
-        display: grid;
-        justify-items: center;
-        padding: 40px 20px;
-    }
-
-    .header-image {
-        width: 250px;
-        height: auto;
-        border-radius: 50%;
-        border: 3px solid white;
-    }
-
-    .nome {
-        font-size: 36px;
-        color: white;
-    }
-
-    section {
-        max-width: 1000px;
-        margin: 20px auto;
-        padding: 30px;
-        background-color: white;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    footer {
-        grid-column: 1 / -1; /* Ocupa toda a largura */
-        padding: 20px 40px;
-    }
-
-    .contact-buttons {
-        display: flex;
-        gap: 20px;
-    }
-
-    .pimbx-button {
-        width: 300px;
-        height: 200px;
-    }
-
-    .pimbx-button img {
-        width: 80%;
-    }
+.welcome-line {
+    background-color: rgba(255, 255, 255, 0.2); /* Retângulo com pouca opacidade */
+    text-align: center;
+    padding: 10px 0; /* Aumentado */
 }
 
-/* Estilos para telas menores (abaixo de 768px) */
-@media (max-width: 768px) {
-    body {
-        grid-template-columns: 1fr;  /* Uma coluna */
-        grid-template-areas: 
-            "header"
-            "main"
-            "footer";
-    }
+.welcome-text {
+    font-family: 'Pixelify Sans', sans-serif; /* Fonte Pixelify Sans */
+    font-size: 28px; /* Aumentado */
+    font-weight: bold; /* Em negrito */
+    color: white; /* Cor branca */
+    margin: 0;
+    animation: blink 1s step-start infinite; /* Efeito de piscar */
+}
 
-    header {
-        padding: 10px;
-        text-align: center;
-    }
+@keyframes blink {
+    0%, 100% { color: #0056B3; }
+    50% { color: white; }
+}
 
-    nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-    }
+.header-background {
+    position: relative; /* Para posicionar o texto ao redor da imagem */
+    background-color: #2f5796; /* Cor de fundo solicitada */
+    text-align: center;
+}
 
-    nav ul li {
-        margin-bottom: 15px;
-    }
+.header-image {
+    width: 250px; /* Aumentado */
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid white;
+    display: block;
+    margin: 0 auto; /* Centralizado */
+}
 
-    .header-background {
-        display: block;
-        padding: 20px;
-    }
+.nome {
+    font-weight: bold; /* Em negrito */
+    font-size: 28px; /* Aumentar o tamanho */
+    text-align: center; /* Centralizar o texto */
+    margin-top: 10px; /* Aumentar espaço entre a imagem e o nome */
+    color: white; /* Cor do texto */
+}
 
-    .header-image {
-        width: 150px;
-        height: auto;
-        margin: 0 auto;
-        border-radius: 50%;
-    }
+header {
+    text-align: center;
+    padding: 10px; /* Diminuído para não invadir a foto */
+}
 
-    .nome {
-        font-size: 24px;
-        color: white;
-    }
+nav {
+    position: absolute;
+    left: 20px; /* Menu no canto esquerdo */
+    top: 20px; /* Ajuste a posição do menu */
+}
 
-    section {
-        margin: 20px;
-        padding: 20px;
-    }
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
 
-    footer {
-        padding: 20px;
-    }
+nav ul li {
+    display: inline; /* Menu horizontal */
+    margin-right: 20px; /* Aumentado para melhor espaçamento */
+}
 
-    .contact-buttons {
-        display: block;
-        text-align: center;
-    }
+nav a {
+    color: white; /* Cor dos links do menu */
+    text-decoration: none;
+    font-size: 20px; /* Aumentar tamanho da fonte dos links */
+}
 
-    .contact-buttons a {
-        display: block;
-        margin-bottom: 10px;
-    }
+section {
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    max-width: 800px;
+}
 
-    .pimbx-button {
-        width: 150px;
-        height: 100px;
-    }
+h2 {
+    color: #0056b3; /* Cor do título */
+    font-size: 24px; /* Aumentar o tamanho da fonte dos títulos */
+}
 
-    .pimbx-button img {
-        width: 70%;
-    }
+.section-text {
+    font-size: 20px; /* Aumentado para se igualar ao título */
+}
+
+.contact-title {
+    display: inline; /* Contato rente aos botões */
+    margin-right: 20px; /* Espaçamento */
+}
+
+.contact-buttons {
+    display: flex; /* Para alinhar os botões lado a lado */
+    justify-content: flex-start; /* Justificado à esquerda */
+    gap: 10px; /* Espaçamento entre os botões */
+}
+
+.contact-buttons a {
+    display: flex; /* Para incluir a imagem e o texto */
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px; /* Arredondar os cantos */
+    text-decoration: none;
+    color: white; /* Cor do texto */
+}
+
+.whatsapp-link {
+    background: linear-gradient(to right, #25D366, #1EBEA5); /* Gradiente do WhatsApp */
+}
+
+.instagram-link {
+    background: linear-gradient(to right, #E1306C, #F56040); /* Gradiente do Instagram */
+}
+
+.contact-buttons img {
+    width: 20px; /* Tamanho das imagens */
+    height: 20px;
+    margin-right: 5px; /* Espaço entre imagem e texto */
+}
+
+.pimbx-button {
+    display: block; /* Para estilizar o botão */
+    width: 200px; /* Aumentado */
+    height: 150px; /* Aumentado */
+    background: white; /* Fundo branco */
+    border-radius: 5px; /* Arredondar os cantos */
+    text-align: center; /* Centralizar o conteúdo */
+    text-decoration: none; /* Sem sublinhado */
+    margin: 20px auto; /* Centralizado na seção */
+}
+
+.pimbx-button img {
+    width: 80%; /* Preencher o botão */
+    height: auto; /* Manter proporção */
+}
+
+footer {
+    text-align: center;
+}
+
+.descubra-link {
+    color: white; /* Cor do link "DESCUBRA" */
+    text-decoration: none; /* Sem sublinhado */
+    font-family: 'Pixelify Sans', sans-serif; /* Fonte do link DESCUBRA */
+    animation: blinkFooter 1s step-start infinite; /* Efeito de piscar */
+}
+
+@keyframes blinkFooter {
+    0%, 100% { color: #0056B3; }
+    50% { color: #1ED760; }
+}
+
+.email {
+    color: white; /* Cor do email */
 }
