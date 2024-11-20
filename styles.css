@@ -1,3 +1,4 @@
+/* Reset de estilos básicos e definição de corpo */
 body {
     background-color: #2f5796;
     font-family: 'Bebas Neue', sans-serif;
@@ -5,17 +6,18 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;  /* Em telas pequenas, uma coluna */
+    grid-template-rows: auto 1fr auto;  /* Cabeçalho, conteúdo e rodapé */
     grid-template-areas: 
         "header"
         "main"
         "footer";
 }
 
+/* Estilos para telas maiores (a partir de 768px) */
 @media (min-width: 768px) {
     body {
-        grid-template-columns: repeat(12, 1fr);
+        grid-template-columns: repeat(12, 1fr);  /* 12 colunas */
         grid-template-areas: 
             "header header header header header header header header header header header header header"
             "main main main main main main main main main main main main main"
@@ -23,7 +25,7 @@ body {
     }
 
     header {
-        grid-column: 1 / -1;
+        grid-column: 1 / -1; /* Ocupa toda a largura */
         text-align: left;
         padding: 20px 40px;
     }
@@ -60,9 +62,13 @@ body {
         max-width: 1000px;
         margin: 20px auto;
         padding: 30px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     footer {
+        grid-column: 1 / -1; /* Ocupa toda a largura */
         padding: 20px 40px;
     }
 
@@ -81,9 +87,10 @@ body {
     }
 }
 
+/* Estilos para telas menores (abaixo de 768px) */
 @media (max-width: 768px) {
     body {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr;  /* Uma coluna */
         grid-template-areas: 
             "header"
             "main"
